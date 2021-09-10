@@ -14,7 +14,6 @@ class TaskController extends Controller
         $folders = Folder::all();
 
         // 選ばれたフォルダを取得する
-        // このidはフォルダの？タスクのとどこで区別している？
         $current_folder = Folder::find($id);
 
         // 選ばれたフォルダに紐づくタスクを取得する
@@ -24,6 +23,16 @@ class TaskController extends Controller
             'folders' => $folders,
             'current_folder_id' => $current_folder->id,
             'tasks' => $tasks,
+        ]);
+    }
+
+    /**
+     * GET /folders/{id}/tasks/create
+     */
+    public function showCreateForm(int $id)
+    {
+        return view('tasks/create', [
+            'folder_id' => $id
         ]);
     }
 }
