@@ -26,7 +26,7 @@ class FolderController extends Controller
         $folder->save();
         // リダイレクト処理
         return redirect()->route('tasks.index', [
-            'id' => $folder->id,
+            'folder' => $folder->id,
         ]);
     }
 }
