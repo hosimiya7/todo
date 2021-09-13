@@ -10,6 +10,9 @@
                         <a href="{{ route('folders.create') }}" class="btn btn-default btn-block">
                             フォルダを追加する
                         </a>
+                        <a href="{{ route('folders.delete', ['folder' => $current_folder_id]) }}" class="btn btn-default btn-block">
+                            フォルダを削除する
+                        </a>
                     </div>
                     <div class="list-group">
                         @foreach ($folders as $folder)

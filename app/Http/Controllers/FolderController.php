@@ -29,5 +29,13 @@ class FolderController extends Controller
             'folder' => $folder->id,
         ]);
     }
+
+    public function delete(Folder $folder)
+    {
+
+        Folder::find($folder->id)->delete();
+
+        return redirect()->route('home');
+    }
 }
 

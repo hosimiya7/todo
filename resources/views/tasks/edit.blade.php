@@ -46,6 +46,12 @@
                                 <button type="submit" class="btn btn-primary">送信</button>
                             </div>
                         </form>
+                        <form action="{{ route('tasks.delete', ['folder' => $task->folder_id, 'task' => $task->id]) }}" method="POST">
+                            @csrf
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary">削除</button>
+                            </div>
+                        </form>
                     </div>
                 </nav>
             </div>
